@@ -1,9 +1,13 @@
+# Copyright (c) ZJUTCV. All rights reserved.
 import cv2
+
 import mmcv
 
 
 def save_image(channel_order):
+
     def warp_out(func):
+
         def warp(img, *args, des=None):
             # img: np.ndarray and str are available.
             img = mmcv.imread(img, channel_order=channel_order)
@@ -12,6 +16,7 @@ def save_image(channel_order):
             if des is not None:
                 mmcv.imwrite(out_img, des)
             return out_img
+
         return warp
 
     return warp_out
@@ -23,7 +28,8 @@ def rgb2gray(img, keepdim=False):
 
     Args:
         img (ndarray): The input image.
-        keepdim (bool): False (by default): return the grayscale image with 2 dims (H x W)
+        keepdim (bool): False (by default): return the grayscale
+                        image with 2 dims (H x W)
                         True : return with 3 dims (H x W x 1)
 
     Returns:
@@ -33,7 +39,3 @@ def rgb2gray(img, keepdim=False):
     if keepdim:
         gray_img = gray_img[..., None]
     return gray_img
-
-
-if __name__ == '__main__':
-    img = rgb2gray('./resources/zjutcv.jpg')
