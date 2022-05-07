@@ -25,9 +25,3 @@ jobs:
           pre-commit install
       - name: Linting
         run: pre-commit run --all-files
-      - name: Format c/cuda codes with clang-format
-        uses: DoozyX/clang-format-lint-action@v0.11
-        with:
-          source: mmcv/ops/csrc
-          extensions: h,c,cpp,hpp,cu,cuh
-          style: google
