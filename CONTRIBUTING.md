@@ -23,7 +23,7 @@ We use the following tools for linting and formatting:
 - [flake8](http://flake8.pycqa.org/en/latest/): A wrapper around some linter tools.
 - [yapf](https://github.com/google/yapf): A formatter for Python files.
 - [isort](https://github.com/timothycrosley/isort): A Python utility to sort imports.
-- [markdownlint](https://github.com/markdownlint/markdownlint): A linter to check markdown files and flag style issues.
+- [mdformat](https://github.com/executablebooks/mdformat):  An opinionated Markdown formatter.
 - [docformatter](https://github.com/myint/docformatter): A formatter to format docstring.
 
 Style configurations of yapf and isort can be found in [setup.cfg](./setup.cfg).
@@ -43,20 +43,6 @@ From the repository folder
 ```shell
 pre-commit install
 ```
-
-Try the following steps to install ruby when you encounter an issue on installing markdownlint
-
-```shell
-# install rvm
-curl -k -L https://get.rvm.io | bash -s -- --autolibs=read-fail
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
-rvm autolibs disable
-
-# install ruby
-rvm install 2.7.1
-```
-
-Or refer to [this repo](https://github.com/innerlee/setup) and take [`zzruby.sh`](https://github.com/innerlee/setup/blob/master/zzruby.sh) according its instruction.
 
 After this on every commit check code linters and formatter will be enforced.
 
