@@ -5,6 +5,7 @@ packaging
 Pillow
 pytest
 pytest-runner
+pytz
 pyyaml
 regex;sys_platform=='win32'
 setuptools
